@@ -21,6 +21,7 @@ export default function useProject() {
     published: true,
   };
   type FormData = typeof initialData;
+  //yea, what is need of typing when everything is optional, hmmm
   type ProjectForm = {
     id: string;
     project_name?: string;

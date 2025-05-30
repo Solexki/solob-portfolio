@@ -1,5 +1,3 @@
-import React from "react";
-
 type PopupProps = {
   title?: string;
   content?: string;

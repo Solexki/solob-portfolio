@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectsForm from "./ProjectForm";
 import useProject from "../Hooks/useProject";
 import SkeletonLoader from "../Common/SkeletonLoader";

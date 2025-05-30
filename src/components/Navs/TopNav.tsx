@@ -1,7 +1,8 @@
-import React from "react";
 import Icon from "../Common/Icon";
+import { useTheme } from "../Hooks/useTheme";
 
 function TopNav() {
+  const { theme, toggleTheme } = useTheme();
   return (
     <div>
       <div className="top-nav">
@@ -9,8 +10,12 @@ function TopNav() {
           <div className="logo">
             <img src="/vite.svg" alt="Logo" />
           </div>
-          <div className="logo">
-            <Icon.MdLightMode size={25} />
+          <div className="logo" onClick={toggleTheme}>
+            {theme === "dark" ? (
+              <Icon.MdLightMode size={30} />
+            ) : (
+              <Icon.FaMoon size={30} />
+            )}
           </div>
         </div>
       </div>

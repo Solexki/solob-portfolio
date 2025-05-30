@@ -25,6 +25,7 @@ export default function useGuestBook() {
     component: null,
   };
   type FormData = typeof initialData;
+  //yea, what is need of typing when everything is optional, hmmm
   type GuestBookEntry = {
     id: string;
     name?: string;

@@ -2,6 +2,8 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../Services/firebase";
 import { useNavigate } from "react-router-dom";
 
+
+//Something simple for just me
 export default function Login() {
   const navigate = useNavigate();
 

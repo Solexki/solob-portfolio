@@ -44,7 +44,8 @@ const About: React.FC = () => {
         </div>
         <div className="about-footer">
           <h1 className="signature">
-            Solomon <span className="eye-container">O</span>bafemi
+            Solomon <span className="eye-blinker"></span>
+            <span className="eye-container">O</span>bafemi
           </h1>
         </div>
       </div>
