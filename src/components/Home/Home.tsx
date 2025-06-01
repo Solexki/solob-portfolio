@@ -72,8 +72,8 @@ function Home() {
                       rel="noopener noreferrer"
                     >
                       <button className="button-primary follow">
-                        <Icon.FaXTwitter />
                         Follow
+                        <Icon.FaXTwitter />
                       </button>
                     </a>
                   </div>

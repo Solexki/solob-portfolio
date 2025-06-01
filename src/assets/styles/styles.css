@@ -32,8 +32,8 @@
 
 .cover-img {
   width: 100vw;
-  height: 30vh;
-  margin-top: 12%;
+  height: 25vh;
+  margin-top: 14%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,6 +76,7 @@
   place-self: flex-end;
   margin-left: auto;
   margin-right: 5px;
+  margin-top: 5px;
 }
 .follow {
   display: flex;
