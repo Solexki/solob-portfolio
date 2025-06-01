@@ -32,8 +32,14 @@
 
 .cover-img {
   width: 100vw;
-  height: auto;
-  margin-top: 15%;
+  height: 30vh;
+  margin-top: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+  overflow: hidden;
+  position: relative;
 }
 
 .cover-img img {
@@ -48,6 +54,7 @@
 .profile-area {
   position: relative;
   width: 100%;
+  
 }
 .profile-img {
   width: 130px;
@@ -68,6 +75,7 @@
 .follow-btn {
   place-self: flex-end;
   margin-left: auto;
+  margin-right: 5px;
 }
 .follow {
   display: flex;
@@ -75,6 +83,10 @@
   gap: 5px;
   border-radius: 80px;
   padding: 10px 30px;
+  transition: transform 0.2s ease-in;
+}
+.follow:hover{
+  transform: scaleX(1.1);
 }
 
 .profile-info {
@@ -103,7 +115,7 @@
 }
 
 .profile-list {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -119,9 +131,8 @@
   gap: 5px;
 }
 
-.list-item img {
-  width: 20px;
-  height: 20px;
+.list-item span{
+   font-size: 14px !important;
 }
 
 .news-letter-area {
@@ -137,7 +148,7 @@
 }
 
 .news-letter-content p {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 10px;
   text-align: center;
@@ -162,7 +173,7 @@
   border: none;
   outline: none;
   font-size: 16px;
-  background-color: var(--bg-color);
+  background-color: var(--item-bg);
   color: var(--secondary-color);
 }
 .newsletter-form button {
@@ -173,9 +184,10 @@
   border: none;
   background-color: var(--primary-color);
   cursor: pointer;
+  transition: transform 0.2s ease-in;
 }
 .newsletter-form button:hover {
-  background-color: var(--primary-color-hover);
+ transform: scaleX(1.1);
 }
 
 .feed-image {
@@ -284,7 +296,7 @@
 .news-tag {
   width: fit-content;
   height: fit-content;
-  background-color: #495058;
+  background-color: var(--item-bg);
   padding: 8px 15px;
   border-radius: 50px;
   font-weight: 600;

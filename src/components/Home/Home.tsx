@@ -10,6 +10,8 @@ import Projects from "../Projects/Projects";
 import GuessBook from "../GuestBook/GuessBook";
 import useAuth from "../Hooks/useAuth";
 
+import { SceneCanvas } from "../SceneCanvas";
+
 function Home() {
   const [activeTab, setActiveTab] = React.useState("Feed");
   const { isAdmin } = useAuth();
@@ -55,7 +57,7 @@ function Home() {
         <div className="hero">
           <div className="hero-content">
             <div className="cover-img">
-              <img src={defaultImages.coverImage} alt="Cover" />
+              <SceneCanvas />
             </div>
             <div className="home-page">
               <div className="profile-area">

@@ -14,8 +14,9 @@
   --color-text: #000;
   --white-man: #fff;
   --bg-color: #f8f9fb;
+ --bg: hsl(210, 80%, calc((90 - (0 * 76)) * 1%));
   --dark-gray: #f2f3f5;
-   --item-bg: #dee1e6;
+   --item-bg: #dee2e6;
    --top-nav-bg: rgba(255, 255, 255, 0.6);
 }
 
