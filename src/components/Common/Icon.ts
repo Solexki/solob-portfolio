@@ -5,6 +5,7 @@ import {
   FaDiscord,
   FaInstagram,
   FaLink,
+  FaArrowRightLong,
 } from "react-icons/fa6";
 import { FaGithub, FaRegHeart, FaHeart, FaCheck, FaMoon } from "react-icons/fa";
 import { SiUpwork } from "react-icons/si";
@@ -33,4 +34,5 @@ export default {
   TbPinnedFilled,
   FaCheck,
   FaMoon,
+  FaArrowRightLong,
 };

@@ -32,7 +32,7 @@
 
 .cover-img {
   width: 100vw;
-  height: 25vh;
+  height: 30vh;
   margin-top: 14%;
   display: flex;
   align-items: center;
@@ -242,6 +242,7 @@
 }
 
 .news-feed-area {
+  padding: 0 20px;
   width: 100%;
   margin-top: 5px;
 }

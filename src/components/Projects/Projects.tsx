@@ -122,6 +122,17 @@ const Projects = (props: ProjectsProps) => {
             handleOnSubmit={handleOnSubmit}
           />
         )}
+
+        <div className="project-note">
+          <div className="project-summary">
+            This are project summary, Click{" "}
+            <a href="/projects">
+              <span>Here</span>
+            </a>
+            To view Full project details.
+          </div>
+        </div>
+
         {projectContent.map((project) => (
           <div key={project.id} className="news-item">
             <div className="news-header">
