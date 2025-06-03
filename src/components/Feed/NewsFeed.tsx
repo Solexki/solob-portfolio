@@ -42,54 +42,6 @@ const NewsFeed = (props: NewsFeedProps) => {
     );
   };
 
-  // const newsFeed: NewsItem[] = [
-  //   {
-  //     id: 1,
-  //     author: "Solomon",
-  //     date: "20 Jan 2023",
-  //     tag: "Feeling Fresh",
-  //     title: "News Title",
-  //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //     image: defaultImages.profileImage,
-  //   },
-  //   {
-  //     id: 2,
-  //     author: "Solomon",
-  //     date: "20 Jan 2023",
-  //     tag: "Feeling Fresh",
-  //     title: "News Title",
-  //     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //     image: defaultImages.profileImage,
-  //   },
-  //   {
-  //     id: 3,
-  //     author: "Jane Doe",
-  //     date: "21 Jan 2023",
-  //     tag: "Tech News",
-  //     title: "Breaking Technology Updates",
-  //     text: "Stay updated with the latest advancements in technology and innovation.",
-  //     image: defaultImages.profileImage,
-  //   },
-  //   {
-  //     id: 4,
-  //     author: "John Smith",
-  //     date: "22 Jan 2023",
-  //     tag: "Health",
-  //     title: "Healthy Living Tips",
-  //     text: "Discover the secrets to maintaining a healthy and balanced lifestyle.",
-  //     image: defaultImages.profileImage,
-  //   },
-  //   {
-  //     id: 5,
-  //     author: "Emily Johnson",
-  //     date: "23 Jan 2023",
-  //     tag: "Travel",
-  //     title: "Top Travel Destinations",
-  //     text: "Explore the most beautiful and exciting travel destinations around the world.",
-  //     image: defaultImages.profileImage,
-  //   },
-  // ];
-
   const feedContent = feedFormEntries.map((entry) => ({
     id: entry.id,
     author: "Solomon Obafemi",

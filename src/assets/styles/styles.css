@@ -276,10 +276,19 @@
 .author-name-date {
   position: absolute;
   padding-bottom: 15px;
-  left: 20%;
+  left: 23%;
   display: flex;
   align-items: center;
   gap: 10px;
+  text-wrap: nowrap;
+}
+
+.author-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 .news-date {
   font-size: 13px;
@@ -421,7 +430,22 @@
   border-top: solid 3px var(--primary-color);
   animation: rotate 1.5s linear infinite;
 }
-
+.project-note{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+}
+.project-summary{
+  width: fit-content;
+  padding: 10px;
+  border: solid 0.5px var(--primary-color);
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+  text-wrap: nowrap;
+}
 @keyframes rotate {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -643,6 +667,16 @@
   .cover-img {
     margin-top: 5%;
   }
+
+  
+.author-name-date {
+  left: 13%;
+}
+
+.author-name {
+  font-size: 16px;
+}
+
   .about-area {
     padding: 0 25%;
   }

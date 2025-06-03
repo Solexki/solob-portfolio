@@ -2,13 +2,19 @@
   position: relative;
   width: 100vw;
   height: 100%;
+  min-height: 100vh;
+  background-color: rgb(237, 112, 46);
 }
+
 .project-content {
   position: relative;
-  width: 100vw;
-  height: 100%;
-  min-height: 100%;
+  width: 95vw;
+  height: 90%;
+  min-height: 99vh;
   display: flex;
+   margin-left: 2.5%;
+   background-color: #f5f5f5;
+   border-radius: 10px;
 }
 .side-bar-area {
   position: relative;
@@ -20,7 +26,9 @@
   background-color: #f5f5f5;
   width: 100%;
   height: 100%;
+    border-radius: 10px;
 }
+
 .content-display-area {
   width: 70vw;
   height: 100%;
@@ -250,9 +258,9 @@
   color: rgb(255, 255, 255);
   margin-left: auto;
   background-color: black;
-  border-radius: 10px 0px 0px;
+  border-radius: 10px 10px 10px 0px;
   padding: 30px;
-  overflow: auto;
+  overflow: auto;;
 }
 
 .project-items {
@@ -270,14 +278,15 @@
   background-color: #19171a;
   padding: 10px;
   border-radius: 5px;
-  height: 90vh;
-  overflow: hidden;
+  height: 90%;
+  max-height: fit-content;
+  overflow: auto;
   transition: all 0.5s ease-in-out;
 }
 
 .project-item.collapsed .item-body {
-  opacity: 0;
-  visibility: collapse;
+  opacity: 0.1;
+  height: fit-content;
   transform: translateY(-50%);
   transition: opacity 0.4s ease-in transform 0.5s ease-in;
 }
@@ -285,6 +294,8 @@
 .project-item .item-body {
   opacity: 1;
   visibility: visible;
+ height: auto;
+ overflow: auto;
   transform: translateY(0%);
   transition: opacity 0.4s ease-in transform 0.5s ease;
 }
@@ -380,9 +391,10 @@
 }
 
 .project-footer {
-  background-color: #f5f5f5;
+  background-color: rgb(237, 112, 46);
   width: 100%;
   height: 8px;
+  z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
@@ -396,7 +408,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 35%;
+    width: 40%;
     height: 100%;
     z-index: 100;
     box-shadow: 5px 20px 70px 10px rgba(101, 101, 101, 0.5);
@@ -501,8 +513,10 @@
   }
 
   .active-item {
+    box-shadow: none;
     transform: translateY(3px);
   }
+  
 
   .active-item-list {
     margin-left: 10%;
@@ -547,4 +561,20 @@
   .project-footer {
     height: 6px;
   }
+.project-img:hover {
+  transform: skew(0deg, 0deg) rotate(0deg) scale(1.7) translate(-45%, 20%);
+ 
+}
+.project-img:first-child:hover {
+  transform: skew(0deg, 0deg) rotate(0deg) scale(1.9) translate(25%, 25%);
+ 
+}
+.project-img:nth-child(3):hover {
+  transform: skew(0deg, 0deg) rotate(0deg) scale(2.2) translate(25%, -20%);
+ 
+}
+.project-img:nth-child(4):hover {
+  transform: skew(0deg, 0deg) rotate(0deg) scale(1.9) translate(-25%, -25%);
+ 
+}
 }

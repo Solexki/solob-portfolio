@@ -127,7 +127,7 @@ const Projects = (props: ProjectsProps) => {
           <div className="project-summary">
             This are project summary, Click{" "}
             <a href="/projects">
-              <span>Here</span>
+              <span>Here </span>
             </a>
             To view Full project details.
           </div>
