@@ -44,7 +44,7 @@ const NewsFeed = (props: NewsFeedProps) => {
 
   const feedContent = feedFormEntries.map((entry) => ({
     id: entry.id,
-    author: "Solomon Obafemi",
+    author: "Solomon O",
     image: defaultImages.profileImage,
     post_tag: entry.post_tag,
     post_title: entry.post_title,
@@ -95,7 +95,9 @@ const NewsFeed = (props: NewsFeedProps) => {
             <div className="news-header">
               <img src={news.image} alt="News" />
               <div className="author-name-date">
-                <div className="author-name">{news.author}</div>
+                <div className="author-name" style={{ marginLeft: "20px" }}>
+                  {news.author}
+                </div>
                 <div className="news-date">•</div>
                 <div className="news-date">{news.date}</div>
               </div>

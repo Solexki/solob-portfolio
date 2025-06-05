@@ -67,7 +67,6 @@ export default function useFeed() {
       }));
       setFeedFormEntries(data);
       setIsloading(false);
-      console.log("Guest book entries fetched:", data);
     } catch (error) {
       console.error("Error fetching guest book entries:", error);
     }

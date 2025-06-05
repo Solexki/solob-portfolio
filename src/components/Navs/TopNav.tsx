@@ -1,4 +1,6 @@
+// import defaultImages from "../Common/defaultImages";
 import Icon from "../Common/Icon";
+import LogoSvg from "../Common/LogoSvg";
 import { useTheme } from "../Hooks/useTheme";
 
 function TopNav() {
@@ -8,13 +10,13 @@ function TopNav() {
       <div className="top-nav">
         <div className="nav-item">
           <div className="logo">
-            <img src="/vite.svg" alt="Logo" />
+            <LogoSvg />
           </div>
           <div className="logo" onClick={toggleTheme}>
             {theme === "dark" ? (
               <Icon.MdLightMode size={30} />
             ) : (
-              <Icon.FaMoon size={30} />
+              <Icon.BsFillTvFill size={30} />
             )}
           </div>
         </div>

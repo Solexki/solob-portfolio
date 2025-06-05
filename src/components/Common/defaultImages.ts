@@ -4,6 +4,7 @@ import wtdt from "../../assets/images/task-screen.png";
 import wtds from "../../assets/images/spin-screen.png";
 import wtda from "../../assets/images/airdrop-screen.png";
 import wtdh from "../../assets/images/home-screen.png";
+import solobLogo from "../../assets/images/solob.svg";
 
 export default {
   profileImage,
@@ -12,4 +13,5 @@ export default {
   wtds,
   wtdh,
   wtdt,
+  solobLogo,
 };

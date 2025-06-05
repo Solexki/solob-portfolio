@@ -9,8 +9,7 @@ import About from "../About/About";
 import Projects from "../Projects/Projects";
 import GuessBook from "../GuestBook/GuessBook";
 import useAuth from "../Hooks/useAuth";
-
-import { SceneCanvas } from "../SceneCanvas";
+import Ballpit from "../Common/Ballpit";
 
 function Home() {
   const [activeTab, setActiveTab] = React.useState("Feed");
@@ -57,7 +56,24 @@ function Home() {
         <div className="hero">
           <div className="hero-content">
             <div className="cover-img">
-              <SceneCanvas />
+              <div
+                style={{
+                  position: "relative",
+                  overflow: "hidden",
+                  minHeight: "500px",
+                  maxHeight: "500px",
+                  width: "100%",
+                }}
+              >
+                <Ballpit
+                  count={200}
+                  gravity={0.7}
+                  friction={0.8}
+                  wallBounce={0.95}
+                  followCursor={true}
+                  colors={["#ff5733", "#33c1ff", "#85e085", "#ff66b3"]}
+                />
+              </div>
             </div>
             <div className="home-page">
               <div className="profile-area">

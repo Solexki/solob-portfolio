@@ -2,10 +2,20 @@ import { useEffect, useState } from "react";
 import defaultImages from "../Common/defaultImages";
 import Icon from "../Common/Icon";
 import "./projects.css";
+import Popup from "../Common/Popup";
+import useProject from "../Hooks/useProject";
 
 function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const isMobileCheck: boolean = window.innerWidth <= 768 ? true : false;
+
+  const { projectEmtries } = useProject();
+
+  useEffect(() => {
+    setIsMobile(isMobileCheck);
+  }, [isMobileCheck]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,67 +45,86 @@ function Projects() {
   };
 
   type ProjectItems = {
-    projectName: string;
-    projectTag: string;
-    projectStack: string;
-    projectCompany: string;
+    projectName?: string;
+    projectTag?: string;
+    projectStack?: string;
+    project_db?: string;
+    other_tools?: string;
     projectImages?: string[];
   };
 
   const projectList: ProjectItems[] = [
-    {
-      projectName: "Kogov",
-      projectStack: "React Native, Node.js",
-      projectTag: "Welfare",
-      projectCompany: "Kogov Ltl",
-      projectImages: [
-        defaultImages.wtdt,
-        defaultImages.wtda,
-        defaultImages.wtdh,
-        defaultImages.wtds,
-      ],
-    },
-    {
-      projectName: "WhiteDogs",
-      projectStack: "React Js, Node.js",
-      projectTag: "Crypto",
-      projectCompany: "Whitedogs Ltl",
-      projectImages: [
-        defaultImages.wtdt,
-        defaultImages.wtda,
-        defaultImages.wtdh,
-        defaultImages.wtds,
-      ],
-    },
-    {
-      projectName: "Portfolio",
-      projectStack: "React Js, Node.js",
-      projectTag: "Tech",
-      projectCompany: "Layer Tech",
-      projectImages: [
-        defaultImages.wtdt,
-        defaultImages.wtda,
-        defaultImages.wtdh,
-        defaultImages.wtds,
-      ],
-    },
-    {
-      projectName: "YVA",
-      projectStack: "HTML, Node.js",
-      projectTag: "Religion",
-      projectCompany: "Yieled Vessels Asm",
-      projectImages: [
-        defaultImages.wtdt,
-        defaultImages.wtda,
-        defaultImages.wtdh,
-        defaultImages.wtds,
-      ],
-    },
+    ...projectEmtries.map((item) => ({
+      projectName: item.project_name,
+      projectTag: item.project_tag,
+      projectStack: item.project_technologies,
+      projectDb: item.project_db,
+      otherTools: item.other_tools,
+      projectImages: item.project_image,
+    })),
   ];
+
+  // const projectList: ProjectItems[] = [
+  //   {
+  //     projectName: "Kogov",
+  //     projectStack: "React Native, Node.js",
+  //     projectTag: "Welfare",
+  //     projectCompany: "Kogov Ltl",
+  //     projectImages: [
+  //       defaultImages.wtdt,
+  //       defaultImages.wtda,
+  //       defaultImages.wtdh,
+  //       defaultImages.wtds,
+  //     ],
+  //   },
+  //   {
+  //     projectName: "WhiteDogs",
+  //     projectStack: "React Js, Node.js",
+  //     projectTag: "Crypto",
+  //     projectCompany: "Whitedogs Ltl",
+  //     projectImages: [
+  //       defaultImages.wtdt,
+  //       defaultImages.wtda,
+  //       defaultImages.wtdh,
+  //       defaultImages.wtds,
+  //     ],
+  //   },
+  //   {
+  //     projectName: "Portfolio",
+  //     projectStack: "React Js, Node.js",
+  //     projectTag: "Tech",
+  //     projectCompany: "Layer Tech",
+  //     projectImages: [
+  //       defaultImages.wtdt,
+  //       defaultImages.wtda,
+  //       defaultImages.wtdh,
+  //       defaultImages.wtds,
+  //     ],
+  //   },
+  //   {
+  //     projectName: "YVA",
+  //     projectStack: "HTML, Node.js",
+  //     projectTag: "Religion",
+  //     projectCompany: "Yieled Vessels Asm",
+  //     projectImages: [
+  //       defaultImages.wtdt,
+  //       defaultImages.wtda,
+  //       defaultImages.wtdh,
+  //       defaultImages.wtds,
+  //     ],
+  //   },
+  // ];
 
   return (
     <div className="project-container">
       <div className="project-content">
+        {isMobile && (
+          <Popup
+            onClose={() => setIsMobile(false)}
+            title="Pc View"
+            content="This page look more beautiful on Desktop View, consider switching"
+          />
+        )}
         {/* side bar */}
         <div
           className={`side-bar-area ${showMobileMenu ? "mobile-side-bar" : ""}`}
@@ -115,7 +144,9 @@ function Projects() {
               <div className="desc">
                 Full-stack developer, building innovative, scalable, and
                 impactful solutions...
-                <span className="read-more">Read More</span>
+                <a href="/">
+                  <span className="read-more">Read More</span>
+                </a>
               </div>
               <div className="side-bar-social">
                 <div className="contact">Contact</div>
@@ -165,12 +196,12 @@ function Projects() {
                       <p>{item.projectStack}</p>
                     </div>
                     <div className="item-list">
-                      <h1>Company</h1>
-                      <p>{item.projectCompany}</p>
+                      <h1>Other Tools</h1>
+                      <p>{item.other_tools}</p>
                     </div>
                     <div className="item-list">
-                      <h1>Category</h1>
-                      <p className="item-des">Welfare</p>
+                      <h1>DataBase</h1>
+                      <p className="item-des">{item.project_db}</p>
                     </div>
                   </div>
                 </div>

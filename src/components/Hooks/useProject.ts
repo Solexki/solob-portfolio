@@ -7,12 +7,14 @@ export default function useProject() {
     project_name: "",
     project_tag: "",
     project_description: "",
-    project_image: "",
+    project_image: [],
     project_link: "",
     project_github: "",
     project_technologies: "",
     project_status: "Published",
     project_logo: "",
+    project_db: "",
+    other_tools: "",
     date: new Date().toLocaleDateString("en-GB", {
       day: "2-digit",
       month: "short",
@@ -27,11 +29,13 @@ export default function useProject() {
     project_name?: string;
     project_tag?: string;
     project_description?: string;
-    project_image?: string;
+    project_image?: string[];
     project_link?: string;
     project_github?: string;
     project_technologies?: string;
     project_status?: string;
+    project_db?: string;
+    other_tools?: string;
     date?: string;
     project_logo?: string;
   };

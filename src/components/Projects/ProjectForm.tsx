@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../Common/Icon";
 import Input from "../Common/Input";
 import TextArea from "../Common/TextArea";
+import ImageUploader from "../Common/ImageUloaderInput";
 
 type ProjectFormProps = {
   showForm: boolean;
@@ -14,11 +15,13 @@ type ProjectFormProps = {
     project_name: string;
     project_tag: string;
     project_description: string;
-    project_image: string;
+    project_image: string[];
     project_link: string;
     project_github: string;
     project_technologies: string;
     project_status: string;
+    project_db?: string;
+    other_tools?: string;
     project_logo: string;
   };
 };
@@ -26,6 +29,17 @@ type ProjectFormProps = {
 const ProjectForm = (props: ProjectFormProps) => {
   const { showForm, setShowForm, handleOnChange, formData, handleOnSubmit } =
     props;
+  const handleImageUpload = (urls: string[]) => {
+    if (formData) {
+      formData.project_image = urls;
+    }
+  };
+
+  const handleLogoUpload = (urls: string[]) => {
+    if (formData) {
+      formData.project_logo = urls[0];
+    }
+  };
 
   return (
     <div>
@@ -59,12 +73,9 @@ const ProjectForm = (props: ProjectFormProps) => {
               required
               onChange={handleOnChange}
             />
-            <Input
-              title="Logo:"
-              name="project_logo"
-              value={formData?.project_logo || ""}
-              required
-              onChange={handleOnChange}
+            <ImageUploader
+              onUploadComplete={handleLogoUpload}
+              title="Project Logo"
             />
             <Input
               title="Stack:"
@@ -74,11 +85,20 @@ const ProjectForm = (props: ProjectFormProps) => {
               onChange={handleOnChange}
             />
             <Input
-              title="Image:"
-              name="project_image"
-              value={formData?.project_image || ""}
-              required
+              title="Other Tools:"
+              name="other_tools"
+              value={formData?.other_tools || ""}
               onChange={handleOnChange}
+            />
+            <Input
+              title="DB:"
+              name="project_db"
+              value={formData?.project_db || ""}
+              onChange={handleOnChange}
+            />
+            <ImageUploader
+              onUploadComplete={handleImageUpload}
+              title="Project Images"
             />
             <TextArea
               name="project_description"
@@ -87,7 +107,9 @@ const ProjectForm = (props: ProjectFormProps) => {
               onChange={handleOnChange}
               title="Description:"
             />
-            <button type="submit">Submit</button>
+            <button disabled={!formData?.project_image.length} type="submit">
+              Submit
+            </button>
           </form>
         )}
       </div>

@@ -2,7 +2,7 @@ import "./common.css";
 
 export function SkeletonPost() {
   return (
-    <div>
+    <div className="skeleton-area">
       <div className="skeleton-item">
         <div className="pinned-cheep"></div>
         <div className="skeleton-header">
