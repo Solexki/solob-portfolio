@@ -76,12 +76,13 @@ function SiteTopNav() {
         >
           {extraBtn.map((btn, index) => (
             <div
+              key={index}
               className="extra-btn"
               style={{
                 transitionDelay: `${index * 0.15}s`,
               }}
             >
-              <a key={index} href={btn.link}>
+              <a href={btn.link}>
                 <div className="extra-btn-social">
                   <span> {btn.name}</span>
                 </div>
