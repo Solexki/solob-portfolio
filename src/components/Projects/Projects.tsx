@@ -34,57 +34,6 @@ const Projects = (props: ProjectsProps) => {
     date?: string;
   };
 
-  // const projects: Project[] = [
-  //   {
-  //     id: 1,
-  //     name: "Portfolio Website",
-  //     description:
-  //       "A personal portfolio website showcasing my projects and skills.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/portfolio",
-  //     tag: "Personal",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "E-commerce Store",
-  //     description: "An online store for buying and selling products.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/ecommerce",
-  //     tag: "E-commerce",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Task Manager",
-  //     description: "A web app to manage daily tasks and to-do lists.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/taskmanager",
-  //     tag: "Productivity",
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Blog Platform",
-  //     description: "A platform for creating and sharing blog posts.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/blogplatform",
-  //     tag: "Blogging",
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Weather App",
-  //     description: "A weather forecasting app with real-time updates.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/weatherapp",
-  //     tag: "Weather",
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Chat Application",
-  //     description: "A real-time chat application for seamless communication.",
-  //     logo: "https://via.placeholder.com/150",
-  //     link: "https://example.com/chatapp",
-  //     tag: "Communication",
-  //   },
-  // ];
   const projects = projectEmtries.map((project) => ({
     id: project.id,
     project_name: project.project_name,
@@ -142,7 +91,7 @@ const Projects = (props: ProjectsProps) => {
                 alt={`${project.project_name} logo`}
                 onError={(e) => {
                   (e.target as HTMLImageElement).src =
-                    defaultImages.profileImage;
+                    defaultImages.profileImage.src;
                 }}
                 style={{
                   width: "40px",

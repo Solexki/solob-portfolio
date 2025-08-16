@@ -2,6 +2,9 @@
   "name": "solob",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -12,7 +15,7 @@
     "@imagekit/react": "^5.0.1",
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
-    "firebase": "^11.8.1",
+    "firebase": "^11.9.1",
     "gsap": "^3.13.0",
     "next": "15.3.3",
     "react": "^19.0.0",
@@ -22,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/prismjs": "^1.26.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5"

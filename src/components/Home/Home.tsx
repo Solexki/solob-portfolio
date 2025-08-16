@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Container from "../Common/Container";
-import defaultImages from "../Common/defaultImages";
 import Icon from "../Common/Icon";
 import TopNav from "../Navs/TopNav";
 import FootNav from "../Navs/FootNav";
@@ -11,17 +10,14 @@ import Projects from "../Projects/Projects";
 import GuessBook from "../GuestBook/GuessBook";
 import useAuth from "../Hooks/useAuth";
 import Ballpit from "../Common/Ballpit";
-import Image from "next/image";
 
 function Home() {
   const [activeTab, setActiveTab] = React.useState("feed");
   const { isAdmin } = useAuth();
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
-    const path = window.location.pathname.replace("/", "");
-
-    if (hash || path) {
-      setActiveTab(hash ? hash : path);
+    if (hash) {
+      setActiveTab(hash);
       const target = document.getElementById("active-tabs");
       target?.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -41,9 +37,9 @@ function Home() {
       link: "",
     },
     {
-      name: "/links",
+      name: "/V2",
       icon: <Icon.FaLink />,
-      link: "/site",
+      link: "/",
     },
     {
       name: "October 5th",
@@ -58,16 +54,18 @@ function Home() {
     {
       name: "FAQ",
       icon: <Icon.FaQuestion />,
-      link: "/site/#faq-section",
+      link: "/#faq-section",
     },
   ];
 
   const tabButtons = [
     { name: "Feed", link: "/posts" },
-    { name: "About", link: "/about" },
+    { name: "About", link: "/about-me" },
     { name: "Projects", link: "/projects" },
     { name: "Guestbook", link: "/contact" },
   ];
+
+  const activeTabLowerCase = activeTab?.toLowerCase();
   return (
     <div>
       <Container>
@@ -98,7 +96,7 @@ function Home() {
               <div className="profile-area">
                 <div className="profile-header">
                   <div className="profile-img">
-                    <Image src={defaultImages.solobdev} alt="Profile" />
+                    <img src="/images/solobdev.webp" alt="Profile" />
                   </div>
                   <div className="follow-btn">
                     <a
@@ -158,7 +156,11 @@ function Home() {
               {tabButtons.map((button, index) => (
                 <div
                   className={`tab-button
-               ${activeTab === button.name ? "active" : ""}`}
+               ${
+                 activeTabLowerCase === button.name.toLocaleLowerCase()
+                   ? "active"
+                   : ""
+               }`}
                   key={index}
                   onClick={() => setActiveTab(button.name)}
                 >
@@ -166,14 +168,12 @@ function Home() {
                 </div>
               ))}
             </div>
-            {activeTab.toLowerCase() === "feed" && (
-              <NewsFeed isAdmin={isAdmin} />
-            )}
-            {activeTab.toLowerCase() === "about" && <About />}
-            {activeTab.toLowerCase() === "projects" && (
+            {activeTabLowerCase === "feed" && <NewsFeed isAdmin={isAdmin} />}
+            {activeTabLowerCase === "about-me" && <About />}
+            {activeTabLowerCase === "projects" && (
               <Projects isAdmin={isAdmin} />
             )}
-            {activeTab.toLowerCase() === "guestbook" && (
+            {activeTabLowerCase === "guestbook" && (
               <GuessBook isAdmin={isAdmin} />
             )}
             <FootNav />

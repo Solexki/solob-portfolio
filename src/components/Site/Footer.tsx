@@ -1,16 +1,8 @@
 import React from "react";
 import LogoSvg from "../Common/LogoSvg";
+import Icon from "../Common/Icon";
 
-type FooterProps = {
-  Icon: {
-    HiChevronRight: React.ComponentType<{ size?: number }>;
-    FaXTwitter: React.ComponentType<{ size?: number }>;
-    FaLinkedinIn: React.ComponentType<{ size?: number }>;
-    SiUpwork: React.ComponentType<{ size?: number }>;
-  };
-};
-
-function Footer({ Icon }: FooterProps) {
+function Footer() {
   type FooterLink = {
     title: string;
     links: {

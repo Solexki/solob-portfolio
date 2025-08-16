@@ -1,10 +1,9 @@
 import React from "react";
-import defaultImages from "../Common/defaultImages";
 import Icon from "../Common/Icon";
 import useFeed from "../Hooks/useFeed";
 import FeedForm from "./FeedForm";
 import SkeletonLoader from "../Common/SkeletonLoader";
-import Image, { StaticImageData } from "next/image";
+import { dataFetcher } from "../Services/dataFetcher";
 
 type NewsFeedProps = {
   isAdmin: boolean;
@@ -22,11 +21,12 @@ const NewsFeed = (props: NewsFeedProps) => {
     feedFormEntries,
     isloading,
   } = useFeed();
+
   type NewsItem = {
     id: string;
 
     author: string;
-    image: string | StaticImageData;
+    image: string;
     post_tag?: string;
     post_title?: string;
     message?: string;
@@ -42,11 +42,19 @@ const NewsFeed = (props: NewsFeedProps) => {
         : [...prevLiked, id]
     );
   };
+  // let feedData;
 
+  // if (feedFormEntries.length > 0) {
+  //   feedData = feedFormEntries;
+
+  // } else {
+  //   feedData =  dataFetcher();
+
+  // }
   const feedContent = feedFormEntries.map((entry) => ({
     id: entry.id,
     author: "Solomon O",
-    image: defaultImages.profileImage,
+    image: "/images/solob.webp",
     post_tag: entry.post_tag,
     post_title: entry.post_title,
     message: entry.message,
@@ -95,7 +103,7 @@ const NewsFeed = (props: NewsFeedProps) => {
               )}
             </div>
             <div className="news-header">
-              <Image src={news.image} alt="News" />
+              <img src={news.image} alt="News" />
               <div className="author-name-date">
                 <div className="author-name">{news.author}</div>
                 <div className="news-date">•</div>

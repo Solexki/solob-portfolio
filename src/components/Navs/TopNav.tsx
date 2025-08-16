@@ -1,3 +1,4 @@
+"use client";
 // import defaultImages from "../Common/defaultImages";
 import Icon from "../Common/Icon";
 import LogoSvg from "../Common/LogoSvg";

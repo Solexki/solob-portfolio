@@ -1,11 +1,11 @@
-import Projects from "@/components/Site/Projects";
+import Work from "@/components/Site/Work";
 import React from "react";
 
 function page() {
   return (
-    <>
-      <Projects />
-    </>
+    <div>
+      <Work />
+    </div>
   );
 }
 

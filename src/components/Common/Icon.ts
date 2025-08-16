@@ -25,9 +25,9 @@ import {
   HiChevronDown,
   HiChevronRight,
 } from "react-icons/hi2";
-import { IoCalendar } from "react-icons/io5";
+import { IoCalendar, IoArrowBack } from "react-icons/io5";
 import { MdLightMode, MdBolt } from "react-icons/md";
-import { TbPinnedFilled } from "react-icons/tb";
+import { TbPinnedFilled, TbArrowUpRight } from "react-icons/tb";
 import { BsFillTvFill } from "react-icons/bs";
 import { PiBrain, PiLightbulbFill } from "react-icons/pi";
 
@@ -64,4 +64,6 @@ export default {
   MdBolt,
   FaPeopleCarry,
   FaQuestion,
+  IoArrowBack,
+  TbArrowUpRight,
 };

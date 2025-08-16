@@ -2,6 +2,33 @@
 import React, { useState } from "react";
 import { db } from "../Services/firebase"; // Adjust the import path as necessary
 import { collection, addDoc, getDocs } from "firebase/firestore";
+type ProjectForm = {
+  id: string;
+  project_name?: string;
+  project_tag?: string;
+  project_description?: string;
+  project_image?: string[];
+  project_link?: string;
+  project_github?: string;
+  project_technologies?: string;
+  project_status?: string;
+  project_db?: string;
+  other_tools?: string;
+  date?: string;
+  project_logo?: string;
+};
+
+export type ProjectItems = {
+  projectId?: string;
+  projectName?: string;
+  projectTag?: string;
+  projectStack?: string;
+  projectDb?: string;
+  otherTools?: string;
+  projectImages?: string[];
+  projectWebsite?: string;
+  date?: string;
+};
 
 export default function useProject() {
   const initialData = {
@@ -25,21 +52,7 @@ export default function useProject() {
   };
   type FormData = typeof initialData;
   //yea, what is need of typing when everything is optional, hmmm
-  type ProjectForm = {
-    id: string;
-    project_name?: string;
-    project_tag?: string;
-    project_description?: string;
-    project_image?: string[];
-    project_link?: string;
-    project_github?: string;
-    project_technologies?: string;
-    project_status?: string;
-    project_db?: string;
-    other_tools?: string;
-    date?: string;
-    project_logo?: string;
-  };
+
 
   const [formData, setFormData] = useState<FormData>(initialData);
   const [showForm, setShowForm] = useState(false);

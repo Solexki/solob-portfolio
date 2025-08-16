@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -8,6 +8,9 @@ const inter = Inter({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#6147a7",
+};
 
 export const metadata: Metadata = {
   title: "Solomon Portfolio",
@@ -18,10 +21,6 @@ export const metadata: Metadata = {
     icon: "/fav/favicon.ico",
     apple: "/fav/apple-touch-icon.png",
   },
-  themeColor: [
-    { media: "(prefers-color-schema: light)", color: "#6147a7" },
-    { media: "(prefers-color-schema: dark)", color: "#6147a7" },
-  ],
 };
 
 export default function RootLayout({
