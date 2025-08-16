@@ -87,7 +87,6 @@ export default function useProject() {
 
   const fetchFeedContent = async () => {
     try {
-      console.log("Starting data fetch");
       const feedCollection = collection(db, "projects");
       // Fetch entries from Firestore (not implemented here)
       const querySnapshot = await getDocs(feedCollection);

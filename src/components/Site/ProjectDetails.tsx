@@ -27,7 +27,21 @@ function ProjectDetails({ id }: { id: React.ReactNode }) {
               <div key={post.id} className="post-detail">
                 <div className="post-title">{post.project_name}</div>
                 <div className="post-photo">
-                  <img src={post.project_image![0]} alt={post.project_name} />
+                  <img
+                    src={`${post.project_image?.[0]}?tr=f-auto`}
+                    srcSet={`
+    ${post.project_image?.[0]}?tr=w-400,f-auto 400w,
+    ${post.project_image?.[0]}?tr=w-800,f-auto 800w,
+    ${post.project_image?.[0]}?tr=w-1600,f-auto 1600w
+  `}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    decoding="async"
+                    loading="lazy"
+                    fetchPriority="low"
+                    draggable="false"
+                    alt={post.project_name}
+                    style={{ objectFit: "cover", borderRadius: "1rem" }}
+                  />
                 </div>
                 <div className="post-summary">{post.project_description}</div>
                 <div className="more-details">

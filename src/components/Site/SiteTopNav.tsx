@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Icon from "../Common/Icon";
 import { socials } from "../Navs/FootNav";
+import SkeletonLoader from "../Common/SkeletonLoader";
 
 type TopBtn = {
   name: string;
@@ -9,8 +10,16 @@ type TopBtn = {
 
 function SiteTopNav() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
+    let isMunted = true;
+    if (isMunted) {
+      setIsMobile(window.innerWidth <= 768);
+      setIsLoading(false);
+    }
+    return () => {
+      isMunted = false;
+    };
   }, []);
 
   const [displayExtraBtn, setDisplayExtraBtn] = useState<boolean>(false);
@@ -22,7 +31,7 @@ function SiteTopNav() {
   ];
   const extraBtns: TopBtn[] = [
     { name: "Portfolio V1", link: "/v1" },
-    { name: "Testimonies", link: "../#testimonies" },
+    { name: "Testimonies", link: "../#testimony" },
     { name: "FAQs", link: "../#faq-section" },
   ];
 
@@ -31,6 +40,7 @@ function SiteTopNav() {
     ? [...mobileBtn, ...extraBtns]
     : extraBtns;
   const exclude = ["Github", "Telegram"];
+
   return (
     <>
       <div className="fixedTop">
@@ -45,6 +55,7 @@ function SiteTopNav() {
           <div className="fixedBtnList">
             <div className="main-btns">
               {!isMobile &&
+                !isLoading &&
                 topBtn.map((btn, index) => (
                   <a key={index} href={btn.link}>
                     <div

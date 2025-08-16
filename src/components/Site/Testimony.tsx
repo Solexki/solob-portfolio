@@ -10,7 +10,7 @@ function Testimony() {
           You Have a Testimony to share or want to read what others are saving
           about me?
         </p>
-        <a href="/#guestbook" style={{ color: "white" }}>
+        <a href="/v1/#guestbook" style={{ color: "white" }}>
           <button style={{ width: "100%" }}>Use Guestbook</button>
         </a>
       </div>

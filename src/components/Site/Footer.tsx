@@ -16,8 +16,8 @@ function Footer() {
       title: "Quick Links",
       links: [
         { name: "Home", href: "/" },
-        { name: "About", href: "/#about" },
-        { name: "Projects", href: "#projects" },
+        { name: "About", href: "/v1/#about" },
+        { name: "Projects", href: "/work" },
         { name: "Contact", href: "#contact" },
       ],
     },

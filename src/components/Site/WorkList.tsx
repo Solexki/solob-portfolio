@@ -32,10 +32,21 @@ function WorkList() {
         <div key={index} className="project-photo">
           <Link key={item.projectId} href={`/work/${item.projectId}`}>
             <img
-              src={item.projectImages ? item.projectImages[0] : undefined}
-              sizes="max(max((100vw - 72px) / 3, 50px), 1px)"
+              src={`${item.projectImages?.[0]}?tr=f-auto`}
+              srcSet={`
+    ${item.projectImages?.[0]}?tr=w-400,f-auto 400w,
+    ${item.projectImages?.[0]}?tr=w-800,f-auto 800w,
+    ${item.projectImages?.[0]}?tr=w-1600,f-auto 1600w
+  `}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               decoding="async"
+              loading="lazy"
+              fetchPriority="low"
+              draggable="false"
+              alt={item.projectName}
+              style={{ objectFit: "cover", borderRadius: "1rem" }}
             />
+
             <div className="link">
               {item.projectName}{" "}
               <span className="project-link">
