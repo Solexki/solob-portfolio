@@ -3,7 +3,9 @@ import useProject, { ProjectItems } from "../Hooks/useProject";
 import Link from "next/link";
 import Icon from "../Common/Icon";
 
-function WorkList() {
+type WorkListProps = { listNumber?: number | null };
+
+function WorkList({ listNumber = null }: WorkListProps) {
   const { projectEmtries } = useProject();
 
   const projects: ProjectItems[] = [
@@ -20,11 +22,13 @@ function WorkList() {
     })),
   ];
 
-  const projectList = projects.sort((a, b) => {
+  const sortedList = projects.sort((a, b) => {
     const dateA = new Date(a.date || "2025-01-01");
     const dateB = new Date(b.date || "2025-01-01");
     return dateB.getTime() - dateA.getTime(); // Sort by date descending
   });
+
+  const projectList = listNumber ? sortedList.slice(0, listNumber) : sortedList;
 
   return (
     <div className="work-grid">
