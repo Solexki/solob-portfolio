@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import Icon from "../Common/Icon";
 import "./projects.css";
 import Footer from "./Footer";

@@ -69,8 +69,8 @@ function ProjectDetails({ id }: { id: React.ReactNode }) {
             ))}
           </div>
           <div className="post-title">More Work</div>
-          <WorkList />
         </div>
+        <WorkList />
       </div>
       <Footer />
     </div>

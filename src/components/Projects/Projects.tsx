@@ -76,7 +76,7 @@ const Projects = (props: ProjectsProps) => {
         <div className="project-note">
           <div className="project-summary">
             Click{" "}
-            <a href="/projects">
+            <a href="/work">
               <span>Here </span>
             </a>
             To view Full project details.

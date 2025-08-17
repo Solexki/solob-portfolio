@@ -8,12 +8,12 @@ import Footer from "./Footer";
 function Work() {
   return (
     <div className="project-container">
+      <SiteTopNav />
       <div className="post-content">
-        <div className="post-title"> Projects Work On</div>
-        <SiteTopNav />
-        <WorkList />
-        <Footer />
+        <div className="post-title"> Projects Worked On</div>
       </div>
+      <WorkList />
+      <Footer />
     </div>
   );
 }
