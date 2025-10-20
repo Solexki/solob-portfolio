@@ -2,11 +2,12 @@ import React from "react";
 import useProject, { ProjectItems } from "../Hooks/useProject";
 import Link from "next/link";
 import Icon from "../Common/Icon";
+import SkeletonLoader from "../Common/SkeletonLoader";
 
 type WorkListProps = { listNumber?: number | null };
 
 function WorkList({ listNumber = null }: WorkListProps) {
-  const { projectEmtries } = useProject();
+  const { projectEmtries, isloading } = useProject();
 
   const projects: ProjectItems[] = [
     ...projectEmtries.map((item) => ({
@@ -29,7 +30,12 @@ function WorkList({ listNumber = null }: WorkListProps) {
   });
 
   const projectList = listNumber ? sortedList.slice(0, listNumber) : sortedList;
-
+  if (isloading)
+    return (
+      <div>
+        <SkeletonLoader />
+      </div>
+    );
   return (
     <div className="work-grid">
       {projectList.map((item, index) => (
@@ -37,18 +43,17 @@ function WorkList({ listNumber = null }: WorkListProps) {
           <Link key={item.projectId} href={`/work/${item.projectId}`}>
             <img
               src={`${item.projectImages?.[0]}?tr=f-auto`}
-              srcSet={`
-    ${item.projectImages?.[0]}?tr=w-400,f-auto 400w,
-    ${item.projectImages?.[0]}?tr=w-800,f-auto 800w,
-    ${item.projectImages?.[0]}?tr=w-1600,f-auto 1600w
-  `}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               decoding="async"
               loading="lazy"
               fetchPriority="low"
               draggable="false"
               alt={item.projectName}
-              style={{ objectFit: "cover", borderRadius: "1rem" }}
+              style={{
+                objectFit: "cover",
+                borderRadius: "1rem",
+                width: "100%",
+                height: "auto",
+              }}
             />
 
             <div className="link">

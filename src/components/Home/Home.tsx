@@ -176,6 +176,7 @@ function Home() {
             {activeTabLowerCase === "guestbook" && (
               <GuessBook isAdmin={isAdmin} />
             )}
+
             <FootNav />
           </div>
         </div>

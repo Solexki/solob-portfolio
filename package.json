@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "deploy": "firebase deploy --only hosting"
   },
   "dependencies": {
     "@imagekit/react": "^5.0.1",
