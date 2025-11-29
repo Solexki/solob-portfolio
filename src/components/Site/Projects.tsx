@@ -18,8 +18,11 @@ function Projects() {
       <TopSection />
 
       {/* Project photo area */}
+
       <WorkList />
+
       {/* Why me section */}
+
       <div id="why-me" className="why-me-section">
         <WhyMe />
       </div>
