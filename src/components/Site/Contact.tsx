@@ -12,13 +12,18 @@ function Contact() {
       <div className="contact-content">
         <div className="pry-card">
           <div className="need-to-talk">
-            <h2>Need to talk?</h2>
+            <span className="contact-eyebrow">Have a project in mind?</span>
+            <h2>Let&apos;s build something that matters.</h2>
             <p>
-              Every Big startup begin with a talk and idea -- write me let's
-              bring this idea to life
+              Great products begin with a thoughtful conversation. Tell me what
+              you are building, where you are stuck, and what success looks
+              like.
             </p>
           </div>
-          <Icon.HiChevronRight />
+          <div className="contact-card__footer">
+            <span>hello@solob.dev</span>
+            <Icon.TbArrowUpRight size={22} />
+          </div>
         </div>
         <div className="contact-form">
           <form
@@ -29,18 +34,20 @@ function Contact() {
               <div className="contact-form-group">
                 <label htmlFor="name">Full Name</label>
                 <input
+                  id="name"
                   type="text"
                   name="name"
-                  placeholder="Enise Godfrey"
+                  placeholder="Your name"
                   required
                 />
               </div>
               <div className="contact-form-group">
                 <label htmlFor="email">Email</label>
                 <input
+                  id="email"
                   type="email"
                   name="email"
-                  placeholder="aValidEmailAddress@host.com"
+                  placeholder="you@company.com"
                   required
                 />
               </div>
@@ -64,10 +71,14 @@ function Contact() {
                 placeholder="Please provide a detailed description of your request"
               ></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit">
+              Send message <Icon.TbArrowUpRight size={17} />
+            </button>
           </form>
 
-          <p>Drop me a message, i will typically respond within 24hours</p>
+          <p className="contact-response">
+            I typically respond within one business day.
+          </p>
         </div>
       </div>
     </>

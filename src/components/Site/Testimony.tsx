@@ -2,16 +2,20 @@ function Testimony() {
   return (
     <>
       <div className="section-title">
-        <div className="eclipse"></div>Testimony?
+        <div className="eclipse"></div>Kind words
       </div>
 
-      <div className="pry-card" style={{ marginBottom: "20px" }}>
-        <p style={{ marginBottom: "25px", fontSize: "15px" }}>
-          You Have a Testimony to share or want to read what others are saving
-          about me?
+      <div className="testimony-card">
+        <p>
+          “The best measure of good work is what collaborators say after the
+          project ships.”
         </p>
-        <a href="/v1/#guestbook" style={{ color: "white" }}>
-          <button style={{ width: "100%" }}>Use Guestbook</button>
+        <span>
+          Read feedback from people I have worked with—or leave a note of your
+          own.
+        </span>
+        <a href="/v1/#guestbook">
+          Open the guestbook <span aria-hidden="true">↗</span>
         </a>
       </div>
     </>

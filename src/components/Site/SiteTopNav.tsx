@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Icon from "../Common/Icon";
 import { socials } from "../Navs/FootNav";
-import SkeletonLoader from "../Common/SkeletonLoader";
+import Link from "next/link";
 
 type TopBtn = {
   name: string;
@@ -45,13 +45,17 @@ function SiteTopNav() {
     <>
       <div className="fixedTop">
         <div className="fixed-content">
-          <div className="fixedPic">
+          <Link className="fixedPic" href="/" aria-label="Solomon Obafemi, home">
             <img
               src={"/images/solob-p.webp"}
-              alt=""
+              alt="Solomon Obafemi"
               style={{ width: "35px", height: "35px", borderRadius: "50%" }}
             />
-          </div>
+            <span>
+              Solomon Obafemi
+              <small>Full-stack developer</small>
+            </span>
+          </Link>
           <div className="fixedBtnList">
             <div className="main-btns">
               {!isMobile &&
@@ -72,13 +76,18 @@ function SiteTopNav() {
                   <div className="fixedBtn contact-btn">Contact</div>
                 </a>
               )}
-              <div
+              <button
+                type="button"
+                aria-label={
+                  displayExtraBtn ? "Close navigation" : "Open navigation"
+                }
+                aria-expanded={displayExtraBtn}
                 className={`fixedBtn menu-btn ${displayExtraBtn ? "open" : ""}`}
                 onClick={() => setDisplayExtraBtn(!displayExtraBtn)}
               >
                 <div className="bar bar1"></div>
                 <div className="bar bar2"></div>
-              </div>
+              </button>
             </div>
           </div>
         </div>

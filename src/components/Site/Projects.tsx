@@ -17,9 +17,24 @@ function Projects() {
 
       <TopSection />
 
-      {/* Project photo area */}
-
-      <WorkList />
+      <section className="work-showcase" aria-labelledby="selected-work-title">
+        <div className="section-heading section-heading--dark">
+          <div>
+            <div className="section-title">
+              <div className="eclipse"></div>
+              Selected work
+            </div>
+            <h2 id="selected-work-title" className="section-header">
+              Products built to make an impact.
+            </h2>
+          </div>
+          <p>
+            A selection of digital products I have designed, engineered, and
+            shipped across web and mobile.
+          </p>
+        </div>
+        <WorkList />
+      </section>
 
       {/* Why me section */}
 

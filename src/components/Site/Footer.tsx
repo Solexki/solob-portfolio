@@ -55,12 +55,12 @@ function Footer() {
       <div className="footer-content">
         <div className="slide-track">
           <span className="slide-text">
-            Bring your ideas to life with innovative solutions. - One Block of
-            code at a time!
+            Bring your ideas to life with innovative solutions — one block of
+            code at a time.
           </span>
           <span className="slide-text">
-            Bring your ideas to life with innovative solutions. - One Block of
-            code at a time!
+            Bring your ideas to life with innovative solutions — one block of
+            code at a time.
           </span>
         </div>
 
@@ -87,6 +87,10 @@ function Footer() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="footer-bottom">
+          <span>Solomon Obafemi</span>
+          <span>Full-stack developer · {new Date().getFullYear()}</span>
         </div>
       </div>
     </div>

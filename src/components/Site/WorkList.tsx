@@ -39,31 +39,32 @@ function WorkList({ listNumber = null }: WorkListProps) {
   return (
     <div className="work-grid">
       {projectList.map((item, index) => (
-        <div key={index} className="project-photo">
-          <Link key={item.projectId} href={`/work/${item.projectId}`}>
-            <img
-              src={`${item.projectImages?.[0]}?tr=f-auto`}
-              decoding="async"
-              loading="lazy"
-              fetchPriority="low"
-              draggable="false"
-              alt={item.projectName}
-              style={{
-                objectFit: "cover",
-                borderRadius: "1rem",
-                width: "100%",
-                height: "auto",
-              }}
-            />
-
-            <div className="link">
-              {item.projectName}{" "}
-              <span className="project-link">
-                <Icon.TbArrowUpRight size={15} />
+        <article key={item.projectId || index} className="project-photo">
+          <Link href={`/work/${item.projectId}`}>
+            <div className="project-photo__media">
+              <img
+                src={`${item.projectImages?.[0]}?tr=f-auto`}
+                decoding="async"
+                loading="lazy"
+                fetchPriority="low"
+                draggable="false"
+                alt={item.projectName}
+              />
+            </div>
+            <div className="project-photo__content">
+              <span className="project-photo__number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3>{item.projectName}</h3>
+                <p>{item.projectTag || item.projectStack || "Digital product"}</p>
+              </div>
+              <span className="project-link" aria-hidden="true">
+                <Icon.TbArrowUpRight size={18} />
               </span>
             </div>
           </Link>
-        </div>
+        </article>
       ))}
     </div>
   );

@@ -3,7 +3,7 @@ import "./prism.css";
 import Link from "next/link";
 
 export default function CodeBlock() {
-  const skillsList = ["React", "React Native", "Node"];
+  const skillsList = ["React", "Spring Boot", "Node"];
   const [displayedSkills, setDisplayedSkills] = useState("");
   const [currentSkill, setCurrentSkill] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -24,7 +24,7 @@ export default function CodeBlock() {
         // Typing next character
         const timeout = setTimeout(() => {
           setDisplayedSkills(
-            (prev) => prev + skillsList[currentSkill][charIndex]
+            (prev) => prev + skillsList[currentSkill][charIndex],
           );
           setCharIndex((c) => c + 1);
         }, 100); // speed of typing

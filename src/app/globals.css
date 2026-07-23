@@ -167,3 +167,18 @@ button:focus-visible {
     right: 5%;
   }
 }
+
+::selection {
+  background: rgba(201, 121, 79, 0.42);
+  color: #fff;
+}
+
+p,
+h1,
+h2,
+h3,
+label,
+input,
+textarea {
+  user-select: text;
+}

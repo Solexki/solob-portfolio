@@ -71,8 +71,8 @@ function WhyMe() {
           </div>
         ))}
       </div>
-      <a href="#contact" style={{ color: "white" }}>
-        <button className="hire-me">Hire me</button>
+      <a href="#contact" className="hire-me">
+        Start a conversation <Icon.TbArrowUpRight size={17} />
       </a>
     </>
   );

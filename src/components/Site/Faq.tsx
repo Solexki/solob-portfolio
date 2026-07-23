@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useState } from "react";
 
 type FaqProps = {
   Icon: {
@@ -7,6 +10,7 @@ type FaqProps = {
 };
 
 function Faq({ Icon }: FaqProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   type FaqItem = {
     question: string;
     answer: string;
@@ -19,7 +23,7 @@ function Faq({ Icon }: FaqProps) {
         "I offer a range of services including web development, mobile app development, and software solutions tailored to your needs.",
     },
     {
-      question: "How much does your services cost?",
+      question: "How much do your services cost?",
       answer:
         "Pricing varies based on the project scope and requirements. I provide a detailed quote after discussing your project needs.",
     },
@@ -40,18 +44,6 @@ function Faq({ Icon }: FaqProps) {
     },
   ];
 
-  const toggleAnswer = (index: number) => {
-    const faqItems = document.querySelectorAll(".faq-item");
-    const answer = faqItems[index];
-    if (answer) {
-      const isActive = answer.classList.contains("active-faq");
-      faqItems.forEach((item) => item.classList.remove("active-faq"));
-      if (!isActive) {
-        answer.classList.toggle("active-faq");
-      }
-    }
-  };
-
   return (
     <>
       <div className="section-title">
@@ -61,15 +53,23 @@ function Faq({ Icon }: FaqProps) {
       <div className="faq-content">
         {faqS.map((question, index) => (
           <div
-            className="faq-item"
+            className={`faq-item ${activeIndex === index ? "active-faq" : ""}`}
             key={index}
-            onClick={() => toggleAnswer(index)}
           >
-            <div className="fa-question">
-              <h3>{question.question}</h3>
+            <button
+              className="fa-question"
+              type="button"
+              aria-expanded={activeIndex === index}
+              aria-controls={`faq-answer-${index}`}
+              onClick={() =>
+                setActiveIndex(activeIndex === index ? null : index)
+              }
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="faq-question-label">{question.question}</span>
               <Icon.HiChevronDown size={15} />
-            </div>
-            <p>{question.answer}</p>
+            </button>
+            <p id={`faq-answer-${index}`}>{question.answer}</p>
           </div>
         ))}
       </div>
